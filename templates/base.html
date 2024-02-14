@@ -1,11 +1,17 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Josefino Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
     <header> 
-        <h1>Django Blog</h1>
+        <h1><a href="{% url 'home' %}">Django Blog</a></h1>
     </header>
     <section>
         {% block content %}
