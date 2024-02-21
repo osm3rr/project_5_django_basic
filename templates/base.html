@@ -18,6 +18,14 @@
             <a href="{% url 'post_new1' %}">New post</a>
         </div>
         <br>
+        {% if user.is_authenticated %}
+            <p>Hi {{ user.username }}!</p>
+            <!-- <p><a href="{% url 'logout' %}">Log Out</a></p> -->
+        {% else %}
+            <p>No está autenticado</p>
+            <a href="{% url 'login' %}">Log In</a>
+        {% endif %}
+        <br>
         {% block content %}
         <!-- contenido propio -->
         {% endblock content %}
